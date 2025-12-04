@@ -34,4 +34,12 @@ public class BaseballScore {
     public int getNothingCount() {
         return nothing;
     }
+
+    public boolean checkGameTry() {
+        if (strikeCount == 3) {
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
