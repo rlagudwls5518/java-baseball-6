@@ -18,8 +18,4 @@ public class GameService {
         return randomNumber.RandomNumber();
     }
 
-    public void resultGame(ResultGame resultGame){
-
-    }
-
 }
