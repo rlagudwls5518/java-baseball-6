@@ -24,18 +24,20 @@ public class GameController {
 
         while (true) {
             List<Integer> computerNumbers = gameService.generaterNewNumber();
-
-            while (true) {
-                String number = input.gameInput();
-                BaseballScore calculatedNumber = gameService.playOneGame(number, computerNumbers);
-                output.gamePrintView(calculatedNumber);
-                if (!calculatedNumber.checkGameTry()) {
-                    break;
-                }
-            }
-
+            startGameLoop(computerNumbers);
             int p = Integer.parseInt(input.reGameInput());
             if (p == 2) {
+                break;
+            }
+        }
+    }
+
+    private void startGameLoop(List<Integer> computerNumbers){
+        while (true) {
+            String number = input.gameInput();
+            BaseballScore calculatedNumber = gameService.playOneGame(number, computerNumbers);
+            output.gamePrintView(calculatedNumber);
+            if (!calculatedNumber.checkGameTry()) {
                 break;
             }
         }
