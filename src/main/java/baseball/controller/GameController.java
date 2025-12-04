@@ -2,7 +2,6 @@ package baseball.controller;
 
 import baseball.dto.BaseballScore;
 import baseball.model.GameService;
-import baseball.model.ResultGame;
 import baseball.view.InputView;
 import baseball.view.OutputView;
 import java.util.List;
@@ -29,13 +28,11 @@ public class GameController {
             while (true) {
                 String number = input.gameInput();
                 BaseballScore calculatedNumber = gameService.playOneGame(number, computerNumbers);
-                ResultGame resultGame = new ResultGame(calculatedNumber,output);
-                if (!resultGame.gameResult()) {
+                output.gamePrintView(calculatedNumber);
+                if (!calculatedNumber.checkGameTry()) {
                     break;
                 }
             }
-
-            output.gameEndView();
 
             int p = Integer.parseInt(input.reGameInput());
             if (p == 2) {
