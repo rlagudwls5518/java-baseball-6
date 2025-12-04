@@ -25,7 +25,7 @@ public class GameController {
         while (true) {
             List<Integer> computerNumbers = gameService.generaterNewNumber();
             startGameLoop(computerNumbers);
-            if (input.restartGame(input.reGameInput())) {
+            if (!input.restartGame(input.reGameInput())) {
                 break;
             }
         }
