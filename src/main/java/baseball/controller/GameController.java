@@ -25,13 +25,13 @@ public class GameController {
         while (true) {
             List<Integer> computerNumbers = gameService.generaterNewNumber();
             startGameLoop(computerNumbers);
-            if(input.restartGame(input.reGameInput())){
+            if (input.restartGame(input.reGameInput())) {
                 break;
             }
         }
     }
 
-    private void startGameLoop(List<Integer> computerNumbers){
+    private void startGameLoop(List<Integer> computerNumbers) {
         while (true) {
             String number = input.gameInput();
             BaseballScore calculatedNumber = gameService.playOneGame(number, computerNumbers);
